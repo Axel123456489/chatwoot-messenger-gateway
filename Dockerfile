@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Instalar dependencias
 COPY pyproject.toml poetry.lock* /app/
-RUN pip install poetry && poetry install --no-root --no-dev
+RUN pip install poetry && poetry install --without dev --no-root
 
 # Copiar código
 COPY . /app
